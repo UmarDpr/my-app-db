@@ -1,0 +1,8 @@
+
+// { Without .env connect mangoDB }
+// const PORT = 3000;
+// MongoDB connection
+// const mongoURI = ;
+// mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => console.log('✅ MongoDB Connected'))
+//   .catch(err => console.error('❌ MongoDB Error:', err));
