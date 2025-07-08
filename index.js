@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 // Import routes
 const userRoutes = require('./routes/userRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-
+const cors = require('cors');    
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -18,7 +18,8 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => console.log('✅ MongoDB Connected'))
 .catch(err => console.error('❌ MongoDB Connection Error:', err));
 
-
+// Middleware
+app.use(cors());
 app.use(bodyParser.json());
 
 // Mount routes with base path
