@@ -3,9 +3,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // Import routes
+const mealTypeRoutes = require('./routes/mealTypeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const orderRoutes = require('./routes/orderRoutes');
-const cors = require('cors');    
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -23,6 +24,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Mount routes with base path
+app.use('/api/meal_type', mealTypeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/order_details', orderRoutes);
 
@@ -34,6 +36,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
 });
-
-
-
