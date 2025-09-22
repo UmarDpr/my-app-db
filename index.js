@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 // Import routes
 const mealTypeRoutes = require('./routes/mealTypeRoutes');
+const sessionTypeRoutes = require('./routes/sessionTypeRoutes');
 const userRoutes = require('./routes/userRoutes');
 const orderRoutes = require('./routes/orderRoutes');
 const cors = require('cors');
@@ -25,6 +26,7 @@ app.use(bodyParser.json());
 
 // Mount routes with base path
 app.use('/api/meal_type', mealTypeRoutes);
+app.use('/api/session_type', sessionTypeRoutes);
 app.use('/api/users', userRoutes);
 app.use('/api/order_details', orderRoutes);
 
